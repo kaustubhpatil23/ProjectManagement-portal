@@ -147,7 +147,7 @@ const CheckerDashboard = () => {
                 {attachments.map((a) => (
                   <li key={a.id}>
                     <a
-                      href={`http://localhost:5000/${a.file_path}`}
+                      href={`${process.env.REACT_APP_BACKEND_URL}/${a.file_path}`}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -200,7 +200,7 @@ const CheckerDashboard = () => {
                 // Fix Windows path formatting
                 const cleanPath = file.file_path.replace(/\\/g, "/");
                 // Ensure this port matches your backend port (5000 or 5001)
-                const fileUrl = `http://localhost:5000/${cleanPath}`;
+                const fileUrl = `${process.env.REACT_APP_BACKEND_URL}/${cleanPath}`;
 
                 return (
                   <li key={file.id}>
