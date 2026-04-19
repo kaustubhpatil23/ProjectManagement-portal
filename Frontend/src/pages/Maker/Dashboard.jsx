@@ -399,7 +399,7 @@ const MakerDashboard = () => {
                 // Fix Windows path formatting
                 const cleanPath = file.file_path.replace(/\\/g, "/");
                 // Ensure this port matches your backend port (5000 or 5001)
-                const fileUrl = `http://localhost:5001/${cleanPath}`;
+                const fileUrl = `${process.env.REACT_APP_BACKEND_URL}/${cleanPath}`;
 
                 return (
                   <li key={file.id}>
