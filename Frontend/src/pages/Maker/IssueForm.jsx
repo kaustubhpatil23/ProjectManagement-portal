@@ -23,7 +23,7 @@ const IssueForm = () => {
     }
 
     try {
-      await axios.post(`https://projectmanagement-portal-production.up.railway.app/api/issues`, formData, {
+      await axios.post(`http://projectmanagement-portal-production.up.railway.app/api/issues`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       message.success("Issue raised successfully!");
