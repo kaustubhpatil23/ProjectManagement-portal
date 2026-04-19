@@ -23,7 +23,7 @@ const IssueForm = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/issues", formData, {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/issues`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       message.success("Issue raised successfully!");
