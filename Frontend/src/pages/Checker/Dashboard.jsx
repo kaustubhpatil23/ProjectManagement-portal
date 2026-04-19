@@ -147,7 +147,7 @@ const CheckerDashboard = () => {
                 {attachments.map((a) => (
                   <li key={a.id}>
                     <a
-                      href={`${process.env.REACT_APP_BACKEND_URL}/${a.file_path}`}
+                      href={`https://projectmanagement-portal-production.up.railway.app/${a.file_path}`}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -200,7 +200,7 @@ const CheckerDashboard = () => {
                 // Fix Windows path formatting
                 const cleanPath = file.file_path.replace(/\\/g, "/");
                 // Ensure this port matches your backend port (5000 or 5001)
-                const fileUrl = `${process.env.REACT_APP_BACKEND_URL}/${cleanPath}`;
+                const fileUrl = `https://projectmanagement-portal-production.up.railway.app/${cleanPath}`;
 
                 return (
                   <li key={file.id}>
