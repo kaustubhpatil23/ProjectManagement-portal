@@ -190,9 +190,13 @@ const columns = [
                 const fileUrl = `https://projectmanagement-portal-production.up.railway.app/${cleanPath}`;
 
                 return (
-            <li key={a.id}>
-            <a href={`https://projectmanagement-portal-production.up.railway.app/${a.file_path.replace(/\\/g, '/')}`} target="_blank" rel="noreferrer">
-            {a.file_name}
+<li key={a.id}>
+  <a 
+    href={`https://projectmanagement-portal-production.up.railway.app/${a.file_path.replace(/\\/g, '/').replace(/^\/+/, '')}`} 
+    target="_blank" 
+    rel="noreferrer"
+  >
+    {a.file_name}
   </a>
 </li>
                 );
