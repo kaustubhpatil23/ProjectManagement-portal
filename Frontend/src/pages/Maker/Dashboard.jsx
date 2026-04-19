@@ -399,7 +399,7 @@ const MakerDashboard = () => {
                 // Fix Windows path formatting
                 const cleanPath = file.file_path.replace(/\\/g, "/");
                 // Ensure this port matches your backend port (5000 or 5001)
-                const fileUrl = `http://projectmanagement-portal-production.up.railway.app/${cleanPath}`;
+                const fileUrl = `https://projectmanagement-portal-production.up.railway.app/${cleanPath}`;
 
                 return (
                   <li key={file.id}>
