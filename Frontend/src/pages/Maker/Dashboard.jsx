@@ -181,50 +181,34 @@ const MakerDashboard = () => {
     return e?.fileList;
   };
 
-  const columns = [
-    // {
-    //   title: "Ticket No",
-    //   dataIndex: "ticket_number",
-    //   key: "ticket_number",
-    //   render: (text, record) => (
-    //     <a
-    //       onClick={() => {
-    //         setModalData(record);
-    //         setIsModalVisible(true);
-    //       }}
-    //     >
-    //       {text}
-    //     </a>
-    //   ),
-    // },
-    // Find your columns array and update the ticket_number render:
-    {
-      title: "Ticket No",
-      dataIndex: "ticket_number",
-      key: "ticket_number",
+const columns = [
+    { 
+      title: 'Ticket No', 
+      dataIndex: 'ticket_number', 
+      key: 'ticket_number',
       render: (text, record) => (
-        <a onClick={() => handleOpenModal(record)}>{text}</a>
-      ),
+        <a 
+          href="#" 
+          onClick={(e) => {
+            e.preventDefault(); // <-- This stops the browser from changing the URL!
+            setModalData(record); 
+            setIsModalVisible(true);
+          }}
+        >
+          {text}
+        </a>
+      )
     },
-    { title: "Description", dataIndex: "description", key: "description" },
-    {
-      title: "Criticality",
-      dataIndex: "criticality",
-      key: "criticality",
-      render: (val) => (
-        <Tag color={val === "High" ? "red" : "orange"}>{val}</Tag>
-      ),
+    { title: 'Description', dataIndex: 'description', key: 'description' },
+    { title: 'Criticality', dataIndex: 'criticality', key: 'criticality',
+      render: val => <Tag color={val === 'High' ? 'red' : 'orange'}>{val}</Tag>
     },
-    {
-      title: "Status",
-      dataIndex: "status",
-      key: "status",
-      render: (status) => {
-        let color =
-          status === "Open" ? "green" : status === "Resolved" ? "blue" : "red";
+    { title: 'Status', dataIndex: 'status', key: 'status',
+      render: status => {
+        let color = status === 'Open' ? 'green' : status === 'Resolved' ? 'blue' : 'red';
         return <Tag color={color}>{status}</Tag>;
-      },
-    },
+      }
+    }
   ];
 
   const projectSelector = (
