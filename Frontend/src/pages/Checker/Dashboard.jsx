@@ -200,13 +200,12 @@ const CheckerDashboard = () => {
                 // Fix Windows path formatting
                 const cleanPath = file.file_path.replace(/\\/g, "/");
                 // Ensure this port matches your backend port (5000 or 5001)
-                const fileUrl = `http://projectmanagement-portal-production.up.railway.app/${cleanPath}`;
+                const fileUrl = `https://projectmanagement-portal-production.up.railway.app/${cleanPath}`;
 
                 return (
-                {/* Note: I added the Windows path fix here too just in case! */}
-<li key={a.id}>
-  <a href={`https://YOUR-RAILWAY-DOMAIN.up.railway.app/${a.file_path.replace(/\\/g, '/')}`} target="_blank" rel="noreferrer">
-    {a.file_name}
+            <li key={a.id}>
+            <a href={`https://projectmanagement-portal-production.up.railway.app/${a.file_path.replace(/\\/g, '/')}`} target="_blank" rel="noreferrer">
+            {a.file_name}
   </a>
 </li>
                 );
