@@ -83,14 +83,30 @@ const CheckerDashboard = () => {
 
   const columns = [
     // Find your columns array and update the ticket_number render:
-    {
-      title: "Ticket No",
-      dataIndex: "ticket_number",
-      key: "ticket_number",
-      render: (text, record) => (
-        <a onClick={() => handleOpenModal(record)}>{text}</a>
-      ),
-    },
+   const columns = [
+        { 
+          title: 'Ticket No', 
+          dataIndex: 'ticket_number', 
+          key: 'ticket_number',
+          render: (text, record) => (
+            <a 
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault(); // <-- This stops the browser from changing the URL!
+                openModal(record);
+              }}
+            >
+              {text}
+            </a>
+          )
+        },
+        { title: 'Criticality', dataIndex: 'criticality', key: 'criticality',
+          render: val => <Tag color={val === 'High' ? 'red' : 'orange'}>{val}</Tag>
+        },
+        { title: 'Status', dataIndex: 'status', key: 'status',
+          render: val => <Tag color={val === 'Resolved' ? 'blue' : val === 'In Progress' ? 'purple' : 'green'}>{val}</Tag>
+        }
+    ];
     {
       title: "Criticality",
       dataIndex: "criticality",
