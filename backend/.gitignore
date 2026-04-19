@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+
+# Environment variables (KEEP SECRETS SAFE!)
+.env
+
+# Uploaded files from your app
+backend/uploads/
+
+# Build outputs
+frontend/dist/
+
+# OS generated files
+.DS_Store
