@@ -81,9 +81,7 @@ const CheckerDashboard = () => {
     }
   };
 
-  const columns = [
-    // Find your columns array and update the ticket_number render:
-   const columns = [
+const columns = [
         { 
           title: 'Ticket No', 
           dataIndex: 'ticket_number', 
@@ -107,33 +105,6 @@ const CheckerDashboard = () => {
           render: val => <Tag color={val === 'Resolved' ? 'blue' : val === 'In Progress' ? 'purple' : 'green'}>{val}</Tag>
         }
     ];
-    {
-      title: "Criticality",
-      dataIndex: "criticality",
-      key: "criticality",
-      render: (val) => (
-        <Tag color={val === "High" ? "red" : "orange"}>{val}</Tag>
-      ),
-    },
-    {
-      title: "Status",
-      dataIndex: "status",
-      key: "status",
-      render: (val) => (
-        <Tag
-          color={
-            val === "Resolved"
-              ? "blue"
-              : val === "In Progress"
-              ? "purple"
-              : "green"
-          }
-        >
-          {val}
-        </Tag>
-      ),
-    },
-  ];
 
   return (
     <div style={{ padding: "24px" }}>
