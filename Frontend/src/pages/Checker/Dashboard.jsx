@@ -203,11 +203,12 @@ const CheckerDashboard = () => {
                 const fileUrl = `http://projectmanagement-portal-production.up.railway.app/${cleanPath}`;
 
                 return (
-                  <li key={file.id}>
-                    <a href={fileUrl} target="_blank" rel="noreferrer">
-                      {file.file_name}
-                    </a>
-                  </li>
+                {/* Note: I added the Windows path fix here too just in case! */}
+<li key={a.id}>
+  <a href={`https://YOUR-RAILWAY-DOMAIN.up.railway.app/${a.file_path.replace(/\\/g, '/')}`} target="_blank" rel="noreferrer">
+    {a.file_name}
+  </a>
+</li>
                 );
               })}
             </ul>
