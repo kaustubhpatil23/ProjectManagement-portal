@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: `http://projectmanagement-portal-production.up.railway.app/api`,
+  baseURL: "https://projectmanagement-portal-production.up.railway.app/api",
 });
 
 // Intercept requests to attach the JWT token
