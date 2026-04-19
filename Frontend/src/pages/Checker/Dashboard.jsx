@@ -147,7 +147,7 @@ const CheckerDashboard = () => {
                 {attachments.map((a) => (
                   <li key={a.id}>
                     <a
-                      href={`http://projectmanagement-portal-production.up.railway.app/${a.file_path}`}
+                      href={`https://projectmanagement-portal-production.up.railway.app/${a.file_path}`}
                       target="_blank"
                       rel="noreferrer"
                     >
